@@ -37,7 +37,7 @@ char Player::get_symbol() {
 
 ///////////////////////////////////// get_move function for X,O 3x3 Game ///////////////////////////////////////////////
 void Player::get_move (int& x, int& y) {
-    cout << "Please enter your move x and y (0 to 2) separated by spaces: ";
+    cout << "Please enter your move x and y (0 to 2) separated by spaces: \n";
     cin >> x >> y;
 }
 
@@ -49,6 +49,12 @@ void Player::getMoveFourInRow(int &x, int &y) {
 
 ///////////////////////////////////// get_move function for X,O 3x3 Game ///////////////////////////////////////////////
 void Player::getMovePyramic(int &x, int &y) {
-    cout << "Please enter your move x and y (0 to 2) separated by spaces: ";
+    cout << "Please enter your move x and y (0 to 2) separated by spaces: \n";
+    cin >> x >> y;
+}
+
+///////////////////////////////////// get_move function for X,O 5x5 Game ///////////////////////////////////////////////
+void Player::getMove5x5(int &x, int &y) {
+    cout << "\nPlease enter your move x and y (0 to 4) separated by spaces: \n";
     cin >> x >> y;
 }

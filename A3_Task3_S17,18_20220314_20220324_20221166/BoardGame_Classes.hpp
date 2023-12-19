@@ -15,7 +15,7 @@ protected:
    int n_rows, n_cols;
    char** board;
    int  n_moves = 0;
-
+    int p1 = 0, p2 = 0;
 public:
    virtual bool update_board (int x, int y, char symbol) = 0;
    virtual bool is_winner() = 0;
@@ -59,6 +59,22 @@ public:
     void display_board();
 };
 
+/////////////////////// This Class represents a 5x5 board to be used in X,O 5x5 Game /////////////////////////////
+class X_O_5x5_board : public Board{
+public:
+    X_O_5x5_board();
+    bool update_board (int x, int y, char mark);
+    bool is_winner();
+    bool is_draw();
+    bool game_is_over();
+    bool is_valid(int x,int y);
+    void display_board();
+    bool check_row(int x,int y);
+    bool check_column(int x,int y);
+    bool check_diagonal_1(int x,int y);
+    bool check_diagonal_2(int x,int y);
+};
+
 ////////////////////// This class represents a player who has a Name and a Symbol to put on board //////////////////////
 class Player {
 protected:
@@ -70,6 +86,7 @@ public:
     virtual void get_move(int& x, int& y);
     virtual void getMoveFourInRow(int& x, int& y);
     virtual void getMovePyramic(int& x, int& y);
+    virtual void getMove5x5(int& x, int& y);
     string to_string();
     char get_symbol();
 };
@@ -83,6 +100,7 @@ public:
     void get_move(int& x, int& y);
     void getMoveFourInRow(int& x, int& y);
     void getMovePyramic(int& x, int& y);
+    void getMove5x5(int& x, int& y);
 };
 
 //////////////////////////////// This Class represents the game manger of all games ////////////////////////////////////
@@ -95,6 +113,7 @@ public:
     void run3x3();
     void runFourInRow();
     void runPyramic();
+    void run5x5();
 };
 
 #endif

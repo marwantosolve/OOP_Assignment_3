@@ -17,7 +17,8 @@ RandomPlayer::RandomPlayer(char symbol, int dimension):Player(symbol)
 {
     this->dimension = dimension;
     this->name = "Random Computer Player";
-    cout << "My names is " << name << '\n';
+    cout << "Hi, I'm Player 2 \n";
+    cout << "My names is: " << name << '\n';
 }
 
 ////////////////////////////// Generate a random move for tic-tac-toe Game Random Player ///////////////////////////////
@@ -33,6 +34,11 @@ void RandomPlayer::getMoveFourInRow(int &x, int &y) {
 }
 
 void RandomPlayer::getMovePyramic(int &x, int &y) {
+    x = (int) (rand()/(RAND_MAX + 1.0) * dimension);
+    y = (int) (rand()/(RAND_MAX + 1.0) * dimension);
+    cout << '\n';
+}
+void RandomPlayer::getMove5x5(int &x, int &y) {
     x = (int) (rand()/(RAND_MAX + 1.0) * dimension);
     y = (int) (rand()/(RAND_MAX + 1.0) * dimension);
     cout << '\n';
