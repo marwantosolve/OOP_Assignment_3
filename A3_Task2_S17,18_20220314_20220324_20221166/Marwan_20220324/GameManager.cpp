@@ -29,7 +29,11 @@ void GameManager::runFourInRow() {
             boardPtr->display_board();
             if (boardPtr->is_winner()){
                 cout  << "\"" <<  players[i]->to_string() << "\" is the Winner :) \n";
-                cout << "Good Luck Next time \"" << players[i+1]->to_string() << "\" :( \n";
+                if (i == 0) {
+                    cout << "Good Luck Next time \"" << players[1]->to_string() << "\" :( \n";
+                } else {
+                    cout << "Good Luck Next time \"" << players[0]->to_string() << "\" :( \n";
+                }
                 return;
             }
             if (boardPtr->is_draw()){
